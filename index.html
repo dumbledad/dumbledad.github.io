@@ -5,6 +5,7 @@
     </head>
     <body>
         <div id="para">(Text to be replaced)</div>
+        <button onclick="changeColor('red');">red</button>
         <script>
             function resetText(text = '') {
                 var element = document.getElementById('para');
@@ -13,7 +14,7 @@
                 }
                 element.innerHTML = text;
             }
-            fetch('https://hangmangamerestapi20190131031658.azurewebsites.net/api/users/')
+            fetch('https://cors.io/?https://hangmangamerestapi20190131031658.azurewebsites.net/api/users/')
             .then(function(response) {
                 return response.json();
             })
