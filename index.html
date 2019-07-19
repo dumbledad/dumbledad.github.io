@@ -6,8 +6,20 @@
     <body>
         <div id="para">(Text to be replaced)</div>
         <script>
-            var element = document.getElementById('para')
-            element.innerHTML = "Hallo World"
+            function resetText(text = '') {
+                var element = document.getElementById('para');
+                if (text === '') {
+                    text = "Hallo World";
+                }
+                element.innerHTML = text;
+            }
+            fetch('https://hangmangamerestapi20190131031658.azurewebsites.net/api/users/')
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(myJson) {
+                resetText(JSON.stringify(myJson));
+            });
         </script>
     </body>
 </html>
